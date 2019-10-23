@@ -33,10 +33,7 @@ class srvsql
 	public function connect_pos()
 	{
 		$serverName		=	"10.10.2.31";
-<<<<<<< HEAD
-=======
 		
->>>>>>> Last Final real real
 		//$serverName			=	"lekise.dyndns.biz,1135";
 		$connectionInfo		=	array(
 										"Database"					=>	"CBL-POS",

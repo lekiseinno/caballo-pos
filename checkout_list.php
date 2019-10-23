@@ -3,16 +3,11 @@
 <?php include_once 'alert.php'; ?>
 <?php include_once 'nav.php'; ?>
 <?php include_once 'left.php'; ?>
-<<<<<<< HEAD
-<?php include_once 'right.php'; ?>
-<?php include_once 'body-start.php'; ?>
-=======
 <?php /*include_once 'right.php';*/ ?>
 <?php /*include_once 'body-start.php';*/ ?>
 <?php include_once 'body-start-noright.php'; ?>
 
 
->>>>>>> Last Final real real
 
 
 <?php
@@ -21,14 +16,11 @@ $connect_pos	=	$srvsql->connect_pos();
 ?>
 
 <div id="checkout_list"></div>
-<<<<<<< HEAD
-=======
 <?php  ?>
 
 
 
 
->>>>>>> Last Final real real
 <script type="text/javascript">
 	$(document).ready(function(){
 		var uri	=	'resource/ajax/checkout_list.php';
@@ -47,11 +39,8 @@ $connect_pos	=	$srvsql->connect_pos();
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> Last Final real real
 <script type="text/javascript">
 	function PopupCenter(url, title, w, h) {
 		var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
@@ -65,13 +54,9 @@ $connect_pos	=	$srvsql->connect_pos();
 			newWindow.focus();
 		}
 	}
-<<<<<<< HEAD
-</script>
-=======
 
 
 </script> 
->>>>>>> Last Final real real
 
 
 

@@ -29,68 +29,6 @@ $connect_pos	=	$srvsql->connect_pos();
 
 	<div class="row row-detail">
 		<div class="col-md-9">
-<<<<<<< HEAD
-			
-			<table class="table table-hover table-striped">
-				<thead>
-					<tr>
-						<th class="text-center" width="5%">#</th>
-						<th width="20%">Img</th>
-						<th>Des</th>
-						<th width="8%">Qty</th>
-						<th width="10%">Price</th>
-						<th width="5%">Menu</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					global $connect_pos;
-					$sql_detail			=	"
-											SELECT		*
-											FROM		[Orders]
-											INNER JOIN	[Orders_detail]	ON	[Orders_detail].[Orders_No]	=	[Orders].[Orders_No]
-											INNER JOIN	[item]			ON	[item].[item No_]			=	[Orders_detail].[Item_No]
-											WHERE		[Orders].[Orders_No]							=	'".$_GET['q']."'
-											";
-					$query_detail		=	sqlsrv_query($connect_pos,$sql_detail) or die( 'SQL Error = '.$sql_detail.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');
-					$i					=	1;
-					while($row_detail	=	sqlsrv_fetch_array($query_detail,SQLSRV_FETCH_ASSOC))
-					{
-						?>
-						<tr>
-							<td class="text-center align-middle">
-								<?php echo $i; ?>
-							</td>
-							<td class="text-center align-middle">
-								<img class="card-img-top"	src="http://10.10.2.31:8081/CBL-POS/images/pattern/<?php echo $row_detail['Item Category Code'] ?>/<?php echo $row_detail['Item Category Code'].'-'.sprintf("%04d",$row_detail['item_screen']) ?>.jpg">
-							</td>
-							<td class="align-middle">
-								<?php
-								$item_array	=	explode(' ', $row_detail['Description']);
-								echo $item_array[1].' '.$item_array[3];
-								?>
-							</td>
-							<td class="align-middle">
-								<input class="form-control form-control-sm text-center" name="qty[]" value="<?php echo $row_detail['Orders_detail_Qty'] ?>" onkeyup="$('#subtotal_show').val(gettotle());">
-							</td>
-							<td class="align-middle">
-								<input class="form-control form-control-sm" name="price[]" value="<?php echo ($row_detail['Orders_detail_Price']*$row_detail['Orders_detail_Qty']); ?>" onkeyup="$('#subtotal_show').val(gettotle());">
-							</td>
-							<td class="align-middle text-right">
-								<a class="btn-clear" href="?order=<?php echo $row_detail['Orders_No'] ?>&row=<?php echo $row_detail['Orders_detail_ID'] ?>" onclick="return confirm('ยืนยันการลบ <?php echo $row_detail['Orders_No'] ?> รายการที่ <?php echo $i; ?>');">
-									<i class="far fa-times-circle fa-sm"></i>
-								</a>
-							</td>
-						</tr>
-						<?php
-						$i++;
-					}
-					?>
-				</tbody>
-			</table>
-
-			
-=======
 			<form action="" id="form-order-detail" method="post">
 			<input type="hidden" name="Orders_No" value="<?php echo $_GET['q'] ?>">
 				<table class="table table-hover table-striped">
@@ -154,7 +92,6 @@ $connect_pos	=	$srvsql->connect_pos();
 				</table>	
 			</form>
 
->>>>>>> Last Final real real
 			<script type="text/javascript">
 				$('.panel-cart-detail').css({
 					height: ($(window).height() - 47),
@@ -279,11 +216,7 @@ $connect_pos	=	$srvsql->connect_pos();
 							</a>
 						</div>
 						<div class="col-md-8" style="padding-left: 2px;">
-<<<<<<< HEAD
-							<a class="btn btn-outline-primary btn-lg" style="width: 100%;" href="process/order_checkout.php?Orders_No=<?php echo $_GET['q']; ?>" id="checkout">
-=======
 							<a class="btn btn-outline-primary btn-lg" style="width: 100%;" href="#" id="checkout">
->>>>>>> Last Final real real
 								ชำระเงิน
 							</a>
 						</div>
@@ -299,11 +232,6 @@ $connect_pos	=	$srvsql->connect_pos();
 	$(document).ready(function(){
 		$("#subtotal_show").val(gettotle());
 	});
-<<<<<<< HEAD
-
-	$("#checkout").click(function(){
-		printDiv('printarea'); 
-=======
 	$("#checkout").click(function(){
 
 		$.ajax({
@@ -330,16 +258,11 @@ $connect_pos	=	$srvsql->connect_pos();
 			}); 
 		
 		
->>>>>>> Last Final real real
 	});
 
 	//var qty = $('input[name="qty[]"]').val();
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Last Final real real
 	function gettotle()
 	{
 		var qty 	=	0;
@@ -356,10 +279,6 @@ $connect_pos	=	$srvsql->connect_pos();
 	}
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Last Final real real
 	function getqtyall()
 	{
 
@@ -372,23 +291,12 @@ $connect_pos	=	$srvsql->connect_pos();
 		return qty;
 	}
 
-<<<<<<< HEAD
-
-
-	
-
-=======
->>>>>>> Last Final real real
 	function getfinal()
 	{
 		var totle	=	gettotle();
 		var discount	=	$('#discount').val();
 		var	vat			=	$('#vat').val();
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Last Final real real
 		var data	=	totle - discount +(totle*vat/100);
 		$('#total').val(data);
 

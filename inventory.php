@@ -7,9 +7,6 @@
 <?php
 $srvsql			=	new	srvsql();
 $connect_pos	=	$srvsql->connect_pos();
-<<<<<<< HEAD
-?>
-=======
 
 
 
@@ -435,7 +432,6 @@ $sql_size		=	"
 	</div>
 </div>
 <hr>
->>>>>>> Last Final real real
 <div class="table-responsive padding-table" style="height: 100%; overflow: auto; font-size: 12px;">
 	<table class="table table-hover table-bordered" id="example">
 		<thead>
@@ -467,23 +463,14 @@ $sql_size		=	"
 	</table>
 </div>
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> Last Final real real
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		var table = $('#example').DataTable( {
-<<<<<<< HEAD
-			"order": [[ 0, "desc" ]],
-			"pageLength": 12,
-			buttons: [
-				{
-=======
 			"order": [[ 3, "desc" ]],
 			"pageLength": 12,
 			buttons: [
@@ -494,7 +481,6 @@ $sql_size		=	"
 					}
 				},
 				{
->>>>>>> Last Final real real
 					extend:		'copyHtml5',
 					text:		'<i class="far fa-copy"></i> copy',
 					titleAttr:	'Copy'

@@ -49,10 +49,6 @@ $connect_pos	=	$srvsql->connect_pos();
 </style>
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Last Final real real
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(document).ajaxStart(function(){
@@ -101,16 +97,7 @@ $connect_pos	=	$srvsql->connect_pos();
 </script>
 
 
-<<<<<<< HEAD
-
-
 <div id="printarea">
-	
-	
-
-=======
-<div id="printarea">
->>>>>>> Last Final real real
 </div>
 
 <script type="text/javascript">
@@ -120,10 +107,6 @@ $connect_pos	=	$srvsql->connect_pos();
 </script>
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Last Final real real
 <script type="text/javascript">
 function printDiv(divName)
 {
@@ -137,58 +120,11 @@ function printDiv(divName)
 
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> Last Final real real
 <?php include_once 'footer.php'; ?>
 
 
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> Last Final real real
 <script type="text/javascript">
 	$(document).ready(function(){
 		/*
@@ -202,11 +138,7 @@ function printDiv(divName)
 			$('#total').val( ($("#subtotal").val() - $('#discount').val()) + parseInt($('#vat').val()) );
 		});
 		*/
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> Last Final real real
 		$("#subtotal").change(function(){
 			$('#vat').val($("#subtotal").val()*7/100);
 			$('#total').val(($("#subtotal").val() - $('#discount').val()) + parseInt($('#vat').val()));

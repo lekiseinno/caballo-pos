@@ -121,11 +121,7 @@ $array_item = array(
 			</thead>
 			<tbody>
 				<tr>
-<<<<<<< HEAD
-					<td><input  type="text" value="0"  name="quantity[]" onkeyup="cal_amount(1)" class=" quantity quantity1" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right"></td>
-=======
 					<td><input  type="text" value="0"  name="quantity[]" onkeyup="cal_amount(1)" class="quantity quantity1" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right"></td>
->>>>>>> Last Final real real
 					<td>
 					<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
@@ -151,11 +147,6 @@ $array_item = array(
 				</tr>
 				<tr>
 					<td></td>
-<<<<<<< HEAD
-					<td align="right">Discount </td>
-					<td></td>
-					<td><input type="text" name="deposit_amount[]" value="0" class="deposit1 deposit" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right" onkeyup="cal_deposit(1)"></td>
-=======
 					<td align="right">Discount1 </td>
 					<td></td>
 					<td><input type="text" name="discount1" value="0" class="cal_deposit" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right" onkeyup="cal_deposit()"></td>
@@ -171,18 +162,12 @@ $array_item = array(
 					<td align="right">Discount3 </td>
 					<td></td>
 					<td><input type="text" name="discount3" value="0" class="cal_deposit" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right" onkeyup="cal_deposit()"></td>
->>>>>>> Last Final real real
 				</tr>
 				<tr>
 					<td></td>
 					<td align="right">DEPOSIT </td>
-<<<<<<< HEAD
-					<td><input type="date" name="deposit_date[]" ></td>
-					<td><input type="text" name="deposit_amount[]" value="0" class="deposit1 deposit" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right" onkeyup="cal_deposit(1)"></td>
-=======
 					<td><!--<input type="date" name="deposit_date[]" >--></td>
 					<td><input type="text" name="deposit_amount[]" value="0" class="cal_deposit" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" style="text-align: right" onkeyup="cal_deposit()"></td>
->>>>>>> Last Final real real
 				</tr>
 				<input type="hidden" value="1" id="count_de">
 				<tr>
@@ -208,27 +193,14 @@ $array_item = array(
 		</div>
 		</form>
 	</div>
-<<<<<<< HEAD
-
 <?php 
 	$srvsql				=	new	srvsql();
 	$connect_pos		=	$srvsql->connect_pos();
-
-=======
-<?php 
-	$srvsql				=	new	srvsql();
-	$connect_pos		=	$srvsql->connect_pos();
->>>>>>> Last Final real real
 	$sql		=	"
 						SELECT	*
 						FROM	[CBL-POS].[dbo].[quotation_head] 
 					";
 		$query	=	sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. 	print_r( sqlsrv_errors(), true) . '</pre>');
-<<<<<<< HEAD
-		
-
-=======
->>>>>>> Last Final real real
  ?>
  	<br>
 	<h4 align="center">รายการใบเสนอราคา <button type="button" class="btn btn-primary btn-lg btn-form-q"  >สร้างใหม่</button></h4>
@@ -250,11 +222,7 @@ $array_item = array(
 				<td align="center"><?php echo $row['quotation_date'] ?></td>
 				<td align="center">
 					<button type="button" class="btn btn-info btn-sm" onclick="goto_page('q_print.php?quotation_no=<?php echo $quotation_no ?>')" >Print</button>
-<<<<<<< HEAD
-					<button type="button" class="btn btn-warning btn-sm" >Edit</button>
-=======
 					<a href="quatation_detail.php?quotation_no=<?php echo $quotation_no ?>"><button type="button" class="btn btn-warning btn-sm">Edit</button></a>
->>>>>>> Last Final real real
 				</td>
 			</tr>
 <?php } ?>
@@ -265,9 +233,6 @@ $array_item = array(
 
 
 
-<<<<<<< HEAD
-
-=======
 <form action="process/quatation_update.php" method='POST'>
 	<div class="modal fade" id="quatation_update" tabindex="-1" role="dialog" aria-labelledby="modalAddorderTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg" role="document" >
@@ -278,16 +243,11 @@ $array_item = array(
 		</div>
 	</div>
 </form>
->>>>>>> Last Final real real
 
 
 
 <script type="text/javascript">
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Last Final real real
 	function goto_page(url){
 		window.open(url);
 	}
@@ -351,25 +311,16 @@ $array_item = array(
 	}
 
 
-<<<<<<< HEAD
-	function cal_deposit(row){
-		var sum_deposit=0;
-		$("input[name='deposit_amount[]']").each(function(){
-=======
 	function cal_deposit(){
 		var sum_deposit=0;
 		$("input[class='cal_deposit']").each(function(){
->>>>>>> Last Final real real
 	      sum_deposit+=parseInt($(this).val());
 	    });
 		$('.sum_deposit').html(sum_deposit);
 		sum_price();
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> Last Final real real
 	function sum_price(){
 		var sumprice=parseInt($('.sum_amount').text())-parseInt($('.sum_deposit').text());
 		$('.sumprice').html(sumprice);
@@ -397,12 +348,8 @@ $(document).ready(function(){
   });
 });
 
-<<<<<<< HEAD
-	
-=======
 
 
->>>>>>> Last Final real real
 </script>
 
 
@@ -420,9 +367,5 @@ $(document).ready(function(){
 		}
 	}
 </script>
-<<<<<<< HEAD
-
-=======
 <?php include_once 'body-end.php'; ?>
 <?php include_once 'footer.php'; ?>
->>>>>>> Last Final real real

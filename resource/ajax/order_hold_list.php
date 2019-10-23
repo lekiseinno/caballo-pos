@@ -16,12 +16,6 @@ $connect_pos	=	$srvsql->connect_pos();
 	</thead>
 	<tbody>
 		<?php
-<<<<<<< HEAD
-		$sql		=	"
-							SELECT		[Orders_No],[Orders_Status]
-							FROM		[CBL-POS].[dbo].[Orders]
-							WHERE		[Orders_Status]		=	'Hold'
-=======
 		$where='';
 		if($_SESSION['emp_level']!=0){
 			$where=" AND emp_code='".$_SESSION['emp_code']."' ";
@@ -30,7 +24,6 @@ $connect_pos	=	$srvsql->connect_pos();
 							SELECT		[Orders_No],[Orders_Status]
 							FROM		[CBL-POS].[dbo].[Orders]
 							WHERE		[Orders_Status]		=	'Hold' $where
->>>>>>> Last Final real real
 							GROUP BY	[Orders_No],[Orders_Status]
 							";
 		$query		=	sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');

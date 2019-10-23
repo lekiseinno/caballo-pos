@@ -6,10 +6,7 @@
 <?php include_once 'left.php'; ?>
 <?php include_once 'right.php'; ?>
 <?php include_once 'body-start.php'; ?>
-<<<<<<< HEAD
-=======
-<?php include_once ('process/item_checksum.php'); ?>
->>>>>>> Last Final real real
+<?php include_once //'process/item_checksum.php'; ?>
 
 <?php
 $srvsql			=	new	srvsql();
@@ -51,31 +48,19 @@ $connect_pos	=	$srvsql->connect_pos();
 <pre>
 
 <?php
-<<<<<<< HEAD
-	$dir		=	"http://10.10.2.31:8081/api/caballo/products/get_img_all";
-=======
 	//$dir		=	"http://10.10.2.31:8081/api/caballo/products/get_img_all";
->>>>>>> Last Final real real
 	$contents	=	file_get_contents($dir);
 	
 	
 	$json_img	=	json_decode($contents,true);
 
 	foreach ($json_img as $key => $value) {
-<<<<<<< HEAD
-		echo "key = ".$key."<br>";
-=======
 		#echo "key = ".$key."<br>";
->>>>>>> Last Final real real
 		//echo "value = ".$value."<br>";
 
 		foreach ($value as $key2 => $value2) {
 			//echo "key2 = ".$key2."<br>";
-<<<<<<< HEAD
-			echo "value2 = ".$value2."<br>";
-=======
 			#echo "value2 = ".$value2."<br>";
->>>>>>> Last Final real real
 		}
 
 	}

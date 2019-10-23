@@ -62,8 +62,6 @@ function getdates($date)
 	$date	=	explode("-", $d[0]);
 	return	$date[2].'/'.$date[1].'/'.$date[0];
 }
-<<<<<<< HEAD
-=======
 
 
 /*
@@ -80,5 +78,4 @@ function qty_in_cart($q)
 	$row		=	sqlsrv_fetch_array($query,SQLSRV_FETCH_ASSOC);
 	return	$row['qty'];
 }*/
->>>>>>> Last Final real real
 ?>

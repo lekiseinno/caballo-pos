@@ -14,11 +14,7 @@
 	$quotation_no=$_GET['quotation_no'];
 	$sql="SELECT	* FROM	[CBL-POS].[dbo].[quotation_head] WHERE quotation_no='$quotation_no'";
 	$query=sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. 	print_r( sqlsrv_errors(), true) . '</pre>');
-<<<<<<< HEAD
-	$row=sqlsrv_fetch_array($query);
-=======
 	$row1=sqlsrv_fetch_array($query);
->>>>>>> Last Final real real
 
 
 
@@ -34,11 +30,7 @@
  	</tr>
  	<tr>
  		<th align="left">Name : </th>
-<<<<<<< HEAD
- 		<td><?php echo $row['quotation_name'] ?></td>
-=======
  		<td><?php echo $row1['quotation_name'] ?></td>
->>>>>>> Last Final real real
  		<td>DATE</td>
  		<td><?php echo date('d/m/Y') ?></td>
  	</tr>
@@ -67,15 +59,11 @@
 		<td align="right"><?php echo number_format($row['unit_price'],2) ?></td>
 		<td align="right"><?php echo number_format($price,2) ?></td>
 	</tr>
-<<<<<<< HEAD
-<?php }	?>
-=======
 <?php 
 	}	
 	$sum_deposit=0;
 	$sum_deposit=$row1['discount1']+$row1['discount2']+$row1['discount3'];
 ?>
->>>>>>> Last Final real real
 	<tr>
 		<td align="right" style="color: red"><?php echo $sum_quantity ?></td>
 		<td></td>
@@ -83,8 +71,6 @@
 		<td align="right" ><?php echo number_format($sum_price,2) ?></td>
 	</tr>
 
-<<<<<<< HEAD
-=======
 	<tr>
 		<td align="right" colspan="3">DISCOUNT1 <?php echo $row1['discount1_date']; ?></td>
 		<td align="right" ><?php echo number_format($row1['discount1'],2) ?></td>
@@ -98,26 +84,17 @@
 		<td align="right" ><?php echo number_format($row1['discount3'],2) ?></td>
 	</tr>
 
->>>>>>> Last Final real real
 <?php 
 
 	$sql="SELECT	* FROM	[CBL-POS].[dbo].[deposit] WHERE quotation_no='$quotation_no'";
 	$query=sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. 	print_r( sqlsrv_errors(), true) . '</pre>');
-<<<<<<< HEAD
-	$sum_deposit=0;
-=======
 	
->>>>>>> Last Final real real
 	while ($row=sqlsrv_fetch_array($query)) { 
 		$sum_deposit=$sum_deposit+$row['deposit_amount'];
 
 ?>
 	<tr>
-<<<<<<< HEAD
-		<td align="right" colspan="3">DEPOSIT <?php echo $row['deposit_date']; ?></td>
-=======
 		<td align="right" colspan="3">DEPOSIT <?php echo date_format(date_create($row['deposit_date']),'Y-m-d') ?></td>
->>>>>>> Last Final real real
 		<td align="right" ><?php echo number_format($row['deposit_amount'],2) ?></td>
 	</tr>
 <?php }	?>

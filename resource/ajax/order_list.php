@@ -45,17 +45,9 @@ $connect_pos	=	$srvsql->connect_pos();
 				<tbody>
 					<?php
 					global $connect_pos;
-<<<<<<< HEAD
-					$sql_detail			=	"
-											SELECT		*
-											FROM		[Orders]
-											INNER JOIN	[Orders_detail]	ON	[Orders_detail].[Orders_No]	=	[Orders].[Orders_No]
-											INNER JOIN	[item]			ON	[item].[item No_]			=	[Orders_detail].[Item_No]
-=======
 					$sql_detail			=	"SELECT		[Orders].*, [Orders_detail].*,(SELECT TOP 1 Description FROM [item] WHERE [item].[Item No_]=[Orders_detail].[Item_No]) AS Description
 												FROM		 [Orders]
 											INNER JOIN	[Orders_detail]	ON	[Orders_detail].[Orders_No]	=	[Orders].[Orders_No]
->>>>>>> Last Final real real
 											WHERE		[Orders].[Orders_No]							=	'".$_GET['q']."'
 											";
 					$query_detail		=	sqlsrv_query($connect_pos,$sql_detail) or die( 'SQL Error = '.$sql_detail.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');

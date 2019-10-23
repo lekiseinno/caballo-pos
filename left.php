@@ -1,40 +1,25 @@
-<<<<<<< HEAD
-<aside class="aside-left">
-	<div class="aside-inner-left">
-		<ul class="list-group list-group-flush list-left">
-=======
 <?php if(!isset($_SESSION['emp_code'])){header("location:login.php");} ?>
 <aside class="aside-left">
 	<div class="aside-inner-left">
 		<ul class="list-group list-group-flush list-left">
 			
 			<!--
->>>>>>> Last Final real real
 			<li class="list-group-item obj-menu text-center">
 				<span class="name-login">
 					<strong>Login</strong>
 				</span>
 			</li>
-<<<<<<< HEAD
-=======
 			-->
->>>>>>> Last Final real real
 			<a class="btn-left" href="index.php">
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
 						<i class="fas fa-home"></i>
 					</div>
-<<<<<<< HEAD
-					<div class="text-center">
-						Index
-					</div>
-=======
 					<!--
 					<div class="text-center">
 						Index
 					</div>
 					-->
->>>>>>> Last Final real real
 				</li>
 			</a>
 			<a class="btn-left" href="checkout_list.php">
@@ -57,8 +42,6 @@
 					</div>
 				</li>
 			</a>
-<<<<<<< HEAD
-=======
 			<a class="btn-left" href="order_tmp_list.php">
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
@@ -69,7 +52,6 @@
 					</div>
 				</li>
 			</a>
->>>>>>> Last Final real real
 			<a class="btn-left" href="quotation.php">
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
@@ -110,15 +92,6 @@
 					</div>
 				</li>
 			</a>
-<<<<<<< HEAD
-			<a class="btn-left" href="#">
-				<li class="list-group-item obj-menu">
-					<div class="text-center">
-						<i class="fas fa-shipping-fast"></i>
-					</div>
-					<div class="text-center">
-						Shifs
-=======
 			<a class="btn-left" href="inventory-import.php">
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
@@ -126,7 +99,6 @@
 					</div>
 					<div class="text-center">
 						Import
->>>>>>> Last Final real real
 					</div>
 				</li>
 			</a>
@@ -140,10 +112,7 @@
 					</div>
 				</li>
 			</a>
-<<<<<<< HEAD
-=======
 			<!--
->>>>>>> Last Final real real
 			<a class="btn-left" href="#">
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
@@ -154,12 +123,8 @@
 					</div>
 				</li>
 			</a>
-<<<<<<< HEAD
-			<a class="btn-left" href="#">
-=======
 			-->
 			<a class="btn-left" href="process/logout.php">
->>>>>>> Last Final real real
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
 						<i class="fas fa-sign-out-alt"></i>
@@ -169,10 +134,7 @@
 					</div>
 				</li>
 			</a>
-<<<<<<< HEAD
-=======
 			<!--
->>>>>>> Last Final real real
 			<a class="btn-left" href="#">
 				<li class="list-group-item obj-menu">
 					<div class="text-center">
@@ -183,10 +145,7 @@
 					</div>
 				</li>
 			</a>
-<<<<<<< HEAD
-=======
 			-->
->>>>>>> Last Final real real
 		</ul>
 	</div>
 </aside>

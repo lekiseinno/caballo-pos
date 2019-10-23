@@ -201,15 +201,11 @@
 	color: #fff;
 	background-color: #007bff;
 }
-<<<<<<< HEAD
-
-=======
 .obj-menu .active
 {
 	color: #fff;
 	background-color: #007bff;
 }
->>>>>>> Last Final real real
 .btn-left{
 	font-weight: 400;
 	color: #007bff;
@@ -230,11 +226,8 @@
 	background-color: transparent;
 	border-color: transparent;
 }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> Last Final real real
 .btn-left:focus, .btn-left.focus {
 	text-decoration: underline;
 	border-color: transparent;

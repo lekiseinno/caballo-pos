@@ -7,13 +7,6 @@ $sql_head	=	"
 				UPDATE [CBL-POS].[dbo].[Orders]	SET
 					[Orders_Status]		=	'Success',
 					[lastupdate]		=	GETDATE()
-<<<<<<< HEAD
-				WHERE [Orders_No]		=	'".$_GET['Orders_No']."'
-				";
-$query_head	=	sqlsrv_query($connect_pos,$sql_head) or die( 'SQL Error = '.$sql_head.'<hr><pre>'. 	print_r( sqlsrv_errors(), true) . '</pre>');
-echo "success";
-?>
-=======
 				WHERE [Orders_No]		=	'".$_POST['Orders_No']."'
 				";
 $query_head	=	sqlsrv_query($connect_pos,$sql_head) or die( 'SQL Error = '.$sql_head.'<hr><pre>'. 	print_r( sqlsrv_errors(), true) . '</pre>');
@@ -84,4 +77,3 @@ foreach ($_POST['Item_No'] as $key => $Item_No) {
 
 
 ?>   
->>>>>>> Last Final real real

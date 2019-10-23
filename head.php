@@ -1,8 +1,5 @@
 <?php include_once 'config.php'; ?>
-<<<<<<< HEAD
-=======
 
->>>>>>> Last Final real real
 <!doctype html>
 <html lang="en">
 <head>

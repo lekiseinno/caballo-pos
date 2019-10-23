@@ -3,15 +3,9 @@
 <?php include_once 'alert.php'; ?>
 <?php include_once 'nav.php'; ?>
 <?php include_once 'left.php'; ?>
-<<<<<<< HEAD
-<?php include_once 'right.php'; ?>
-<?php include_once 'body-start.php'; ?>
-
-=======
 <?php /*include_once 'right.php';*/ ?>
 <?php /*include_once 'body-start.php';*/ ?>
 <?php include_once 'body-start-noright.php'; ?>
->>>>>>> Last Final real real
 
 <?php
 
@@ -30,12 +24,6 @@ $connect_pos	=	$srvsql->connect_pos();
 		</thead>
 		<tbody>
 			<?php
-<<<<<<< HEAD
-			$sql		=	"
-								SELECT		[Orders_No],[Orders_Status]
-								FROM		[CBL-POS].[dbo].[Orders]
-								WHERE		[Orders_Status]		=	'Success'
-=======
 			$where='';
 			if($_SESSION['emp_level']!=0){
 				$where=" AND emp_code='".$_SESSION['emp_code']."' ";
@@ -44,7 +32,6 @@ $connect_pos	=	$srvsql->connect_pos();
 								SELECT		[Orders_No],[Orders_Status]
 								FROM		[CBL-POS].[dbo].[Orders]
 								WHERE		[Orders_Status]		=	'POS from windows_App NO CUT STOCK' $where
->>>>>>> Last Final real real
 								GROUP BY	[Orders_No],[Orders_Status]
 								";
 			$query		=	sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');
@@ -60,14 +47,6 @@ $connect_pos	=	$srvsql->connect_pos();
 					</td>
 					<td>
 						<?php
-<<<<<<< HEAD
-						$sql_detail		=	"
-											SELECT		*
-											FROM		[Orders]
-											INNER JOIN	[Orders_detail]	ON	[Orders_detail].[Orders_No]	=	[Orders].[Orders_No]
-											INNER JOIN	[item]		ON	[item].[item No_]				=	[Orders_detail].[Item_No]
-											WHERE		[Orders].[Orders_No]							=	'".$row['Orders_No']."'
-=======
 						
 						$sql_detail		=	"
 											SELECT		[Orders].*, [Orders_detail].*,(SELECT TOP 1 Description FROM [item] WHERE [item].[Item No_]=[Orders_detail].[Item_No]) AS des
@@ -75,7 +54,6 @@ $connect_pos	=	$srvsql->connect_pos();
 											INNER JOIN	[Orders_detail]	ON	[Orders_detail].[Orders_No]	=	[Orders].[Orders_No]
 
 											WHERE		[Orders].[Orders_No]							=	'".$row['Orders_No']." '
->>>>>>> Last Final real real
 											";
 						$query_detail	=	sqlsrv_query($connect_pos,$sql_detail) or die( 'SQL Error = '.$sql_detail.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');
 						$num[$i]		=	0;

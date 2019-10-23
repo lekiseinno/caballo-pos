@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-	<?php include_once 'config.php'; ?>
-=======
 
->>>>>>> Last Final real real
 	<?php include_once 'modal.php'; ?>
 	<script src="resource/js/popper.min.js"></script>
 	<script src="resource/js/bootstrap.js"></script>
