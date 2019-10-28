@@ -23,7 +23,8 @@ $connect_pos	=	$srvsql->connect_pos();
 			<tr>
 				<th style="width: 5%">Code</th>
 				<th style="width: 1%">Region</th>
-				<th>Name</th>
+				<th style="width: 20%">Name</th>
+				<th style="width: 6%">Bday</th>
 				<th style="width: 20%">Address</th>
 				<th>Phone</th>
 				<th>Email</th>
@@ -48,16 +49,46 @@ $connect_pos	=	$srvsql->connect_pos();
 					<td>
 						<a class="btn btn-link" href="#" onclick="PopupCenter('customer_detail.php?Customer_code=<?php echo $row['Customer_code']; ?>','CBL-POS','1240','600');  ">
 							<?php echo $row['Customer_code']; ?>
+							<?php
+							if(!empty($row['Customer_code_ERP']))
+							{
+								echo "<br><span style='font-size:9px;'>[ ".$row['Customer_code_ERP']." ]</span>";
+							}
+							?>
 						</a>
 					</td>
 					<td class="text-center">
-						<img class="flag-icon" src="resource/images/flag/<?php echo $row['Customer_region']; ?>.svg">
+						<?php
+						if(!empty($row['Customer_region']))
+						{
+							?>
+							<img class="flag-icon" src="resource/images/flag/<?php echo $row['Customer_region']; ?>.svg">
+							<?php
+						}
+						else
+						{
+							?>
+							<img class="flag-icon" src="resource/images/flag/none.svg">
+							<?php
+						}
+						?>
 					</td>
 					<td class="align-middle">
-						<?php echo $row['Customer_FName'] . ' ' . $row['Customer_LName']; ?>
+						<?php
+							echo $row['Customer_FName'] . ' ' . $row['Customer_LName'];
+							if(!empty($row['Customer_NickName']))
+							{
+								echo ' # '.$row['Customer_NickName'].' ' ;
+							}
+						?>
 					</td>
 					<td class="align-middle">
-						<?php echo $row['Customer_Address']; ?>
+						<span style="font-size: 12px;">
+							<?php echo $row['Customer_Birthday']; ?>
+						</span>
+					</td>
+					<td class="align-middle">
+						<?php echo $row['Customer_Address'] . ' ' . $row['Customer_Address2'] . ' ' . $row['Customer_City'] . ' ' . $row['Customer_PostCode']; ?>
 					</td>
 					<td class="align-middle"><?php echo $row['Customer_Tel']; ?></td>
 					<td class="align-middle"><?php echo $row['Customer_Email']; ?></td>
@@ -439,6 +470,11 @@ $connect_pos	=	$srvsql->connect_pos();
 				</div>
 				<div class="modal-body">
 					<div class="row">
+
+						<div class="col-1">
+							<label>ERP CODE</label>
+							<input class="form-control" name="Customer_ERPCODE">
+						</div>
 						<div class="col-2">
 							<label>Region</label>
 							<br>
@@ -696,28 +732,44 @@ $connect_pos	=	$srvsql->connect_pos();
 							<label>ID Card</label>
 							<input class="form-control" name="Customer_IDCard">
 						</div>
-						<div class="col-7">
+						<div class="col-6">
 							<div class="row">
-								<div class="col-4">
+								<div class="col-3">
 									<label>First Name</label>
 									<input class="form-control" name="Customer_FName">
 								</div>
-								<div class="col-4">
+								<div class="col-3">
 									<label>Last Name</label>
 									<input class="form-control" name="Customer_LName">
 								</div>
-								<div class="col-4">
+								<div class="col-3">
 									<label>Nick Name</label>
 									<input class="form-control" name="Customer_NickName">
+								</div>
+								<div class="col-3">
+									<label>BirthDay</label>
+									<input class="form-control" name="Customer_BirthDay">
 								</div>
 							</div>
 						</div>
 					</div>
 					<hr>
 					<div class="row">
-						<div class="col-12">
+						<div class="col-3">
 							<label>Address</label>
 							<input class="form-control" name="Customer_Address">
+						</div>
+						<div class="col-3">
+							<label>Address 2</label>
+							<input class="form-control" name="Customer_Address2">
+						</div>
+						<div class="col-3">
+							<label>City</label>
+							<input class="form-control" name="Customer_City">
+						</div>
+						<div class="col-3">
+							<label>Post Code</label>
+							<input class="form-control" name="Customer_PostCode">
 						</div>
 					</div>
 					<hr>

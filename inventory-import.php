@@ -54,7 +54,7 @@ if($_POST)
 										[Document No_],
 										[Description],
 										[Location Code],
-										SUM([Quantity]) as quantity,
+										SUM([Remaining Quantity]) as quantity,
 										[Document Date],
 										[Prod_ Order No_],
 										[Item Category Code],
@@ -62,7 +62,11 @@ if($_POST)
 										[Posting Date]
 							FROM		[10.10.2.9].[CAL-GOLIVE].[dbo].[Caballo Co_,Ltd_\$Item Ledger Entry]
 							WHERE		[Document No_] = '".$_POST['doc_no']."'
-							AND			[Entry Type] = 6
+							AND			(
+										[Entry Type]	=	4
+										OR
+										[Entry Type]	=	6
+										)
 							AND			[Location Code] = 'WH-FG_02'
 							GROUP BY	[Item No_],
 										[Source No_],
@@ -85,7 +89,7 @@ if($_POST)
 					<td><?php echo $row['Item No_']; ?></td>
 					<td><?php echo $row['Description']; ?></td>
 					<td><?php echo $row['Item Category Code']; ?></td>
-					<td><?php echo number_format($row['Remaining Quantity'],0); ?></td>
+					<td><?php echo number_format($row['quantity'],0); ?></td>
 					<td><?php echo $row['Unit of Measure Code']; ?></td>
 					<td><?php echo number_format($row['Retail Price'],2); ?></td>
 					<td><?php echo number_format($row['Wholesales Price'],2); ?></td>

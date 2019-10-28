@@ -14,7 +14,7 @@ $connect_pos		=	$srvsql->connect_pos();
 									[Document No_],
 									[Description],
 									[Location Code],
-									SUM([Quantity]) as quantity,
+									SUM([Remaining Quantity]) as quantity,
 									[Document Date],
 									[Prod_ Order No_],
 									[Item Category Code],

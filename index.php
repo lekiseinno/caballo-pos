@@ -6,7 +6,7 @@
 <?php include_once 'left.php'; ?>
 <?php include_once 'right.php'; ?>
 <?php include_once 'body-start.php'; ?>
-<?php include_once //'process/item_checksum.php'; ?>
+<?php //include_once 'process/item_checksum.php'; ?>
 
 <?php
 $srvsql			=	new	srvsql();
