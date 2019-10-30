@@ -4,6 +4,7 @@ $connect_pos	=	$srvsql->connect_pos();
 
 
 
+
 function noworder_json($type,$q)
 {
 	global $connect_pos;
