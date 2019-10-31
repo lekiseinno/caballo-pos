@@ -443,19 +443,25 @@ $sql_size		=	"
 				<th>Unit</th>
 				<th>ปลีก</th>
 				<th>ส่ง</th>
+				<th>Menu</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php
 			$sql		=	"
-							SELECT	*
+							SELECT	TOP 10 *
 							FROM	[CBL-POS].[dbo].[item]
 							";
 			$query		=	sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');
 			$i			=	0;
 			while($row	=	sqlsrv_fetch_array($query,SQLSRV_FETCH_ASSOC))
 			{
-				?><tr><td><?php echo $row['Item No_']; ?></td><td><?php echo $row['Description']; ?></td><td><?php echo $row['Item Category Code']; ?></td><td><?php echo number_format($row['Remaining Quantity'],0); ?></td><td><?php echo $row['Unit of Measure Code']; ?></td><td><?php echo number_format($row['Retail Price'],2); ?></td><td><?php echo number_format($row['Wholesales Price'],2); ?></td></tr><?php
+				?><tr><td><?php echo $row['Item No_']; ?></td><td><?php echo $row['Description']; ?></td><td><?php echo $row['Item Category Code']; ?></td><td><?php echo number_format($row['Remaining Quantity'],0); ?></td><td><?php echo $row['Unit of Measure Code']; ?></td><td><?php echo number_format($row['Retail Price'],2); ?></td><td><?php echo number_format($row['Wholesales Price'],2); ?></td>
+					<td>
+						<a href="#" class="btn btn-outline-info" onclick="adjust_item('<?php echo $row['Item No_']; ?>');"> <i class="fas fa-plus"></i> </a>
+						<a href="#" class="btn btn-outline-warning" onclick="tf_item('<?php echo $row['Item No_']; ?>');"> <i class="fas fa-random"></i> </a>
+					</td>
+					</tr><?php
 				$i++;
 			}
 			?>
@@ -467,7 +473,24 @@ $sql_size		=	"
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
+<script type="text/javascript">
+	function adjust_item(item_no)
+	{
+		var Quantity = prompt('Adjust Item no : ' + '\''+item_no+'\'');
+		var	uri		=	'process/item_adjust.php?item_no='+item_no+"&Quantity="+Quantity
+		$.get( uri , function( input ) {
+			location.reload();
+		});
+	}
+	function tf_item(item_no)
+	{
+		var Quantity = prompt('Tranfer Item no : ' + '\''+item_no+'\'');
+		var	uri		=	'process/item_tranfer.php?item_no='+item_no+"&Quantity="+Quantity
+		$.get( uri , function( input ) {
+			location.reload();
+		});
+	}
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var table = $('#example').DataTable( {
@@ -478,6 +501,12 @@ $sql_size		=	"
 					text: 'คลังติดลบ',
 					action: function ( e, dt, button, config ) {
 						window.location = 'inventory-minus.php';
+					}
+				},
+				{
+					text: 'คลังตำหนิ',
+					action: function ( e, dt, button, config ) {
+						window.location = 'inventory-tf.php';
 					}
 				},
 				{

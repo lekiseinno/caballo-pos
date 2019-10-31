@@ -27,8 +27,7 @@ $connect_pos	=	$srvsql->connect_pos();
 			$sum_remain	=	0;
 			$sql		=	"
 							SELECT	TOP 10	*
-							FROM	[CBL-POS].[dbo].[item]
-							WHERE	[CBL-POS].[dbo].[item].[Remaining Quantity]	<=	0
+							FROM	[CBL-POS].[dbo].[item_broken]
 							";
 			$query		=	sqlsrv_query($connect_pos,$sql) or die( 'SQL Error = '.$sql.'<hr><pre>'. print_r( sqlsrv_errors(), true) . '</pre>');
 			$i			=	0;
@@ -45,7 +44,7 @@ $connect_pos	=	$srvsql->connect_pos();
 					<td><?php echo number_format($row['Retail Price'],2); ?></td>
 					<td><?php echo number_format($row['Wholesales Price'],2); ?></td>
 					<td>
-						<a href="#" class="btn btn-outline-info" onclick="adjust_item('<?php echo $row['Item No_']; ?>');"> + </a>
+						<a href="#" class="btn btn-outline-warning" onclick="tf_item('<?php echo $row['Item No_']; ?>');"> <i class="fas fa-random"></i> </a>
 					</td>
 				</tr>
 				<?php
@@ -96,8 +95,16 @@ $connect_pos	=	$srvsql->connect_pos();
 <script type="text/javascript">
 	function adjust_item(item_no)
 	{
-		var Quantity = prompt('Adjust_item Item no : ' + '\''+item_no+'\'');
+		var Quantity = prompt('Adjust Item no : ' + '\''+item_no+'\'');
 		var	uri		=	'process/item_adjust.php?item_no='+item_no+"&Quantity="+Quantity
+		$.get( uri , function( input ) {
+			location.reload();
+		});
+	}
+	function tf_item(item_no)
+	{
+		var Quantity = prompt('Tranfer Item no : ' + '\''+item_no+'\'');
+		var	uri		=	'process/item_tranfer.php?item_no='+item_no+"&Quantity="+Quantity
 		$.get( uri , function( input ) {
 			location.reload();
 		});
@@ -118,9 +125,9 @@ $connect_pos	=	$srvsql->connect_pos();
 					}
 				},
 				{
-					text: 'คลังตำหนิ',
+					text: 'คลังติดลบ',
 					action: function ( e, dt, button, config ) {
-						window.location = 'inventory-tf.php';
+						window.location = 'inventory-minus.php';
 					}
 				},
 				{
